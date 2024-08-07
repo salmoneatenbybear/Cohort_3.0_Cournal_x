@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* The nice sexy black color */
+    color: #e0e0e0; /* Light gray text for contrast */
+}
+
+.entry{
+    margin:auto;
+    padding-left: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    border-radius: 5px;
+    background-color: #1a1a1a; /* Background color for each lecture section */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    max-width: 800px; /* Optional: adjust width to fit your content */
+    width: 100%; /* Ensure it fills the width up to max-width */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+ul li {
+    margin-bottom: 15px; /* Adjust this value for vertical spacing */
+}
