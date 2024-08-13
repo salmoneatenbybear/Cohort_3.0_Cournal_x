@@ -39,12 +39,12 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-
-
-
-
-
-
-
-
-
+   // Function to toggle the calendar display
+   function toggleCalendar() {
+    var calendarContainer = document.getElementById("calendar-container");
+    if (calendarContainer.style.display === "none") {
+        calendarContainer.style.display = "block";
+    } else {
+        calendarContainer.style.display = "none";
+    }
+};

@@ -1,4 +1,4 @@
-/* General body styles */
+
 body {
     font-family: 'Poppins', sans-serif, Arial, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Use the imported Google Font */
     margin: 0;
@@ -7,30 +7,30 @@ body {
     color: #e0e0e0;
 }
 
-/* Main page heading */
+
 h1 {
     font-size: 40px;
-    font-weight: 700; /* Bold for the main heading */
+    font-weight: 700; 
     color: #ffffff;
     margin-bottom: 10px;
 }
 
 h2 {
     font-size: 22px;
-    font-weight: 600; /* Semi-bold for subheadings */
+    font-weight: 600; 
     color: #ffffff;
     margin-top: 20px;
     margin-bottom: 10px;
 }
 
 h1, h2 {
-    letter-spacing: 0.5px; /* Slight spacing for a more modern look */
+    letter-spacing: 0.5px; 
 }
 
 
 p {
     font-size: 17px;
-    font-weight: 300; /* Light weight for paragraphs */
+    font-weight: 300; 
     line-height: 1.8;
 }
 
@@ -44,7 +44,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Accordion buttons */
+
 .accordion {
     background-color: #1e1e1e;
     color: #ffffff;
@@ -57,13 +57,13 @@ a:hover {
     transition: background-color 0.4s ease, box-shadow 0.4s ease;
     font-size: 18px;
     margin-bottom: 10px;
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
 .accordion:hover {
     background-color: #333;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
 }
 
 .accordion.active {
@@ -71,27 +71,27 @@ a:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Panel content styling */
+
 .panel {
     padding: 0 18px;
-    background-color: #2c2c2c; /* Slightly lighter background */
+    background-color: #2c2c2c; 
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease-out, padding 0.4s ease-out;
-    border-radius: 0 0 10px 10px; /* Match the rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Same shadow as accordion */
+    border-radius: 0 0 10px 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
 .panel.show {
-    max-height: 1000px; /* Large enough value to show content */
+    max-height: 1000px; 
     padding: 20px;
     transition: max-height 0.4s ease-in, padding 0.4s ease-in;
 }
 
 .panel p, .panel ul {
-    font-size: 16px; /* Slightly smaller font for content */
+    font-size: 16px; 
     line-height: 1.6;
-    color: #e0e0e0; /* Light gray text for readability */
+    color: #e0e0e0; 
 }
 
 .panel ul {
@@ -100,7 +100,7 @@ a:hover {
 }
 
 .panel a {
-    color: #1e90ff; /* Distinct blue for links */
+    color: #1e90ff; 
     text-decoration: none;
 }
 
@@ -108,90 +108,90 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Media query for screens smaller than 768px */
+
 @media (max-width: 768px) {
     .entry {
         padding-left: 20px;
         padding-right: 10px;
         padding-top: 8px;
         padding-bottom: 8px;
-        max-width: 100%; /* Make sure it takes the full width of the screen */
+        max-width: 100%; 
     }
     
     h1 {
-        font-size: 24px; /* Adjust font size for smaller screens */
+        font-size: 24px; 
     }
 
     h2 {
-        font-size: 20px; /* Adjust font size for entry titles */
+        font-size: 20px; 
     }
 
     p {
-        font-size: 16px; /* Adjust paragraph font size */
+        font-size: 16px; 
     }
 
     ul li {
-        margin-bottom: 10px; /* Reduce the spacing between list items */
-        font-size: 16px; /* Adjust list item font size */
+        margin-bottom: 10px; 
+        font-size: 16px; 
     }
 }
 
-/* Container for the search input */
+
 .search-container {
     position: relative;
     max-width: 400px;
-    margin: 20px auto; /* Center the search input */
+    margin: 20px auto; 
     width: 100%;
 }
 
-/* Styling the search input field */
+
 .search-input {
     width: 100%;
-    padding: 15px 50px 15px 20px; /* Increase padding for a more substantial feel */
-    border-radius: 30px; /* More rounded corners */
-    border: none; /* Remove border */
-    background: linear-gradient(135deg, #2c2c2c, #3b3b3b); /* Gradient background */
-    color: #e0e0e0; /* Light text */
-    font-size: 18px; /* Larger font size */
-    outline: none; /* Remove default outline */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Pronounced shadow for a floating effect */
-    box-sizing: border-box; /* Ensure padding is included in the width */
-    transition: all 0.3s ease; /* Smooth transition on focus */
+    padding: 15px 50px 15px 20px; 
+    border-radius: 30px; 
+    border: none; 
+    background: linear-gradient(135deg, #2c2c2c, #3b3b3b); 
+    color: #e0e0e0; 
+    font-size: 18px; 
+    outline: none; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+    box-sizing: border-box; 
+    transition: all 0.3s ease; 
 }
 
-/* Search icon styling */
+
 .search-icon {
     position: absolute;
-    right: 20px; /* Position it inside the input field */
+    right: 20px; 
     top: 50%;
     transform: translateY(-50%);
-    font-size: 20px; /* Increase icon size */
-    color: #6c63ff; /* Use a bright, distinct color for the icon */
-    transition: color 0.3s ease; /* Smooth transition for color change */
+    font-size: 20px; 
+    color: #6c63ff; 
+    transition: color 0.3s ease; 
 }
 
-/* Input focus state */
+
 .search-input:focus {
-    background: linear-gradient(135deg, #3b3b3b, #4a4a4a); /* Slightly lighter gradient on focus */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); /* Enhanced shadow on focus */
+    background: linear-gradient(135deg, #3b3b3b, #4a4a4a); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); 
 }
 
 .search-icon:hover {
-    color: #ffffff; /* Change icon color on hover */
+    color: #ffffff; 
 }
 
-/* Placeholder text color */
+
 .search-input::placeholder {
-    color: #888; /* Placeholder color */
-    opacity: 1; /* Ensure placeholder is visible */
+    color: #888; 
+    opacity: 1; 
 }
 
-/* Footer Styles */
+
 .footer {
-    background-color: #121212; /* Match the body background */
+    background-color: #121212; 
     padding: 10px 0;
     text-align: center;
-    color: #888888; /* Subtle gray text */
+    color: #888888; 
     width: 100%;
 }
 
@@ -205,11 +205,11 @@ a:hover {
 .footer-content p {
     font-size: 14px;
     margin-bottom: 5px;
-    color: #888888; /* Subtle gray for text */
+    color: #888888; 
 }
 
 
-/* Ensure that the footer is responsive */
+
 @media (max-width: 768px) {
     .footer-content p {
         font-size: 13px;
@@ -219,4 +219,25 @@ a:hover {
         width: 20px;
         height: 20px;
     }
+}
+
+
+ #calendar-container {
+    display: none;
+    border: solid 1px #777;
+    width: 300px;
+    height: 300px;
+}
+
+
+.calendar-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+
+.calendar-icon {
+    font-size: 24px;
 }
