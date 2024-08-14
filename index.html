@@ -6,6 +6,7 @@
         <title>Cohort 3.0 Journal</title>
         <link rel="stylesheet" href="styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     </head>
     
 <body>
@@ -17,28 +18,35 @@
             <p>A continuum journal for Cohort 3.0</p>
         </div>
         <div class="search-container">
-            <input type="text" id="searchInput" class="search-input" placeholder="Search by keyword or date" onkeyup="filterEntries()" />
+            <input type="text" id="searchInput" class="search-input" placeholder="Search by keyword or date" onkeyup="filterEntries()" aria-label="Search journal entries" />
             <span class="search-icon">&#128269;</span> 
         </div>
+        <div class="filters">
+            <select id="sectionFilter" onchange="filterEntries()">
+                <option value="">All</option>
+                <option value="web3">Web 3</option>
+                <option value="webdev">Web Dev</option>
+            </select>
+        </div>
         <div>
-            
-            <button class="calendar-button" onclick="toggleCalendar()">
-                📅 
-            </button>
+            <div>
+                <button class="calendar-button" onclick="toggleCalendar()" aria-label="Toggle calendar view" title="Toggle calendar view">
+                    <i class="fas fa-calendar-alt"></i>
+                </button>
+            </div>
 
             <!-- Calendar iframe container -->
             <div id="calendar-container">
                 <iframe src="https://calendar.google.com/calendar/embed?height=400&wkst=1&ctz=Asia%2FKolkata&bgcolor=%23ffffff&showPrint=0&showTabs=0&showCalendars=0&title&showTitle=0&src=YTE4NmU3MzE4N2YzZGIzZGI3NjVhOGQwZTY5ZTkxMzUwMGJmZmExMGY3MWU5NzhlNDYyNDEwOWY0N2RhOGQ3ZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23009688" 
-                    style="border:solid 1px #777" width="300" height="300" frameborder="0" scrolling="no"></iframe>
+                    style="border:solid 1px #777" width="300" height="300" frameborder="0" scrolling="no" aria-label="Google Calendar"></iframe>
             </div>
         </div>
         <br>
     </center>
 
-    
-    <section class="entry">
-        <button class="accordion">D1 : 2nd August 2024 : Web 3 Orientation</button>
-        <div class="panel">
+    <section class="entry" data-section="web3" data-tags="blockchain,bitcoin,cryptography">
+        <button class="accordion" aria-expanded="false" aria-controls="panel1" id="accordion1">D1 : 2nd August 2024 : Web 3 Orientation</button>
+        <div class="panel" id="panel1" role="region" aria-labelledby="accordion1">
             <div>
                 <h2>Recorded Video Link</h2>
                 <p><a target="_blank" href="https://app.100xdevs.com/courses/13/408/409">Video(1/2)</a> || <a target="_blank" href="https://app.100xdevs.com/courses/13/408/410">Video(2/2)</a></p>
@@ -72,10 +80,9 @@
     </section>
     <br/>
 
-    
-    <section class="entry">
-        <button class="accordion">D2 : 3rd August 2024 : Web Dev / Devops Orientation</button>
-        <div class="panel">
+    <section class="entry" data-section="webdev" data-tags="html,css,flexbox">
+        <button class="accordion" aria-expanded="false" aria-controls="panel2" id="accordion2">D2 : 3rd August 2024 : Web Dev / Devops Orientation</button>
+        <div class="panel" id="panel2" role="region" aria-labelledby="accordion2">
             <div>
                 <h2>Recorded Video Link</h2>
                 <p><a target="_blank" href="https://app.100xdevs.com/courses/14/411/412">Video(1/1)</a></p>
@@ -104,10 +111,9 @@
     </section>
     <br/>
 
-    
-    <section class="entry">
-        <button class="accordion">D3 : 4th August 2024 : Web Dev / Devops</button>
-        <div class="panel">
+    <section class="entry" data-section="webdev" data-tags="javascript,cs,syntax">
+        <button class="accordion" aria-expanded="false" aria-controls="panel3" id="accordion3">D3 : 4th August 2024 : Web Dev / Devops</button>
+        <div class="panel" id="panel3" role="region" aria-labelledby="accordion3">
             <div>
                 <h2>Recorded Video Link</h2>
                 <p><a target="_blank" href="https://app.100xdevs.com/courses/14/411/421">Video(1/1)</a></p>
@@ -150,10 +156,9 @@
     </section>
     <br/>
 
-    
-    <section class="entry">
-        <button class="accordion">D4 : 9th August 2024 : Web 3</button>
-        <div class="panel">
+    <section class="entry" data-section="web3" data-tags="authentication,cryptography,blockchain">
+        <button class="accordion" aria-expanded="false" aria-controls="panel4" id="accordion4">D4 : 9th August 2024 : Web 3</button>
+        <div class="panel" id="panel4" role="region" aria-labelledby="accordion4">
             <div>
                 <h2>Recorded Video Link</h2>
                 <p><a target="_blank" href="https://app.100xdevs.com/courses/13/426">Video(1/1)</a></p>
@@ -185,9 +190,9 @@
     </section>
     <br/>
 
-    <section class="entry">
-        <button class="accordion">D5 : 10th August 2024 : Web Dev / Devops</button>
-        <div class="panel">
+    <section class="entry" data-section="webdev" data-tags="javascript,async,promises">
+        <button class="accordion" aria-expanded="false" aria-controls="panel5" id="accordion5">D5 : 10th August 2024 : Web Dev / Devops</button>
+        <div class="panel" id="panel5" role="region" aria-labelledby="accordion5">
             <div>
                 <h2>Recorded Video Link</h2>
                 <p><a target="_blank" href="https://app.100xdevs.com/courses/14/430">Video(1/1)</a></p>
@@ -220,9 +225,9 @@
     </section>
     <br/>
 
-    <section class="entry">
-        <button class="accordion">D6 : 11th August 2024 : Web Dev / Devops</button>
-        <div class="panel">
+    <section class="entry" data-section="webdev" data-tags="javascript,promises,classes">
+        <button class="accordion" aria-expanded="false" aria-controls="panel6" id="accordion6">D6 : 11th August 2024 : Web Dev / Devops</button>
+        <div class="panel" id="panel6" role="region" aria-labelledby="accordion6">
             <div>
                 <h2>Recorded Video Link</h2>
                 <p><a target="_blank" href="https://app.100xdevs.com/courses/14/430/432">Video(1/1)</a></p>
@@ -247,30 +252,32 @@
             <div>
                 <h2>Stuff Harkirat told to do</h2>
                 <ul>
-                    <li>Create Promisified versions of sevral Async functions.</li>
+                    <li>Create Promisified versions of several Async functions.</li>
                     <Li>Try to write your own promise class (!! Hard !!)</Li>
+                    <li>offline Videos : 
+                        <ul>
+                            <li>Bash and Terminals (Basics) <a target="_blank" href="https://app.100xdevs.com/courses/14/435/436">🔗</a> </li>
+                            <li>Bash advance (Laisha) <a target="_blank" href="https://app.100xdevs.com/courses/14/435/437">🔗</a> </li>
+                            <li>Installing Node.js, assignment solving<a target="_blank" href="https://app.100xdevs.com/courses/14/435/438">🔗</a> </li>
+                            <li>VS Code assignment<a target="_blank" href="https://app.100xdevs.com/courses/14/435/439">🔗</a> </li>
+                            <li>Callback hell, Rejects, and async/await <a target="_blank" href="https://app.100xdevs.com/courses/14/435/440">🔗</a> </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
     </section>
     <br/>
 
-    
-   
-   <footer class="footer">
-    <div class="footer-content">
-        <a href="https://x.com/AdiLovsJiujitsu"  target="_blank" rel="noopener noreferrer">
-    
-            <h2>🐒</h2>
-        </a>
-        <p>I will take you to the creator. ( of this site, not a diety )</p>
-    </div>
-</footer>
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="https://x.com/AdiLovsJiujitsu" target="_blank" rel="noopener noreferrer" aria-label="Visit the creator's profile">
+                <h2>🐒</h2>
+            </a>
+            <p>I will take you to the creator. (of this site, not a deity)</p>
+        </div>
+    </footer>
 
-
-
-
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

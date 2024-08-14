@@ -1,50 +1,43 @@
-// Function to filter entries based on user input
+// Function to filter entries based on user input and section
 function filterEntries() {
-    // Get the value from the search input
-    const input = document.getElementById('searchInput');
-    const filter = input.value.toLowerCase();
-    
-    // Get all entry sections
-    const entries = document.getElementsByClassName('entry');
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const sectionFilter = document.getElementById('sectionFilter').value.toLowerCase();
+    const entries = document.querySelectorAll('.entry');
 
-    // Loop through all entries and hide those that don't match the query
-    for (let i = 0; i < entries.length; i++) {
-        const entry = entries[i];
-        
-        // Check if the entry contains the search keyword or date
-        if (entry.innerHTML.toLowerCase().indexOf(filter) > -1) {
-            entry.style.display = ''; // Show the entry
-        } else {
-            entry.style.display = 'none'; // Hide the entry
-        }
-    }
+    entries.forEach(entry => {
+        const entryText = entry.textContent.toLowerCase();
+        const entrySection = entry.getAttribute('data-section').toLowerCase();
+
+        const matchesText = entryText.includes(input);
+        const matchesSection = !sectionFilter || entrySection === sectionFilter;
+
+        entry.style.display = (matchesText && matchesSection) ? '' : 'none';
+    });
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
     const accordions = document.querySelectorAll(".accordion");
 
-    accordions.forEach(function(accordion) {
-        accordion.addEventListener("click", function() {
-            this.classList.toggle("active");
+    accordions.forEach(accordion => {
+        accordion.addEventListener("click", () => {
+            const isActive = accordion.classList.toggle("active");
+            const panel = accordion.nextElementSibling;
 
-            const panel = this.nextElementSibling;
+            accordion.setAttribute("aria-expanded", isActive);
+
             if (panel.style.maxHeight) {
                 panel.style.maxHeight = null;
                 panel.classList.remove("show");
             } else {
-                panel.style.maxHeight = panel.scrollHeight + "px";
+                panel.style.maxHeight = `${panel.scrollHeight}px`;
                 panel.classList.add("show");
             }
         });
     });
 });
 
-   // Function to toggle the calendar display
-   function toggleCalendar() {
-    var calendarContainer = document.getElementById("calendar-container");
-    if (calendarContainer.style.display === "none") {
-        calendarContainer.style.display = "block";
-    } else {
-        calendarContainer.style.display = "none";
-    }
-};
+// Function to toggle the calendar display
+function toggleCalendar() {
+    const calendarContainer = document.getElementById("calendar-container");
+    calendarContainer.style.display = (calendarContainer.style.display === "none" || calendarContainer.style.display === "") ? "block" : "none";
+}
