@@ -93,3 +93,39 @@ particlesJS("particles-js", {
     },
     "retina_detect": true
 });
+
+// Function to toggle light and dark mode
+function toggleTheme() {
+    const body = document.body;
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    
+    
+    body.classList.toggle('light-mode');
+
+    
+    const icon = themeToggleBtn.querySelector('i');
+    if (body.classList.contains('light-mode')) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+    }
+
+    
+    localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
+        const icon = document.getElementById('themeToggleBtn').querySelector('i');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    }
+});
+
+
+document.getElementById('themeToggleBtn').addEventListener('click', toggleTheme);

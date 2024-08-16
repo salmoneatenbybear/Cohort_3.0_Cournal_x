@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cohort 3.0 Journal</title>
+        <title>Cohort 3.0 Cournal</title>
         <link rel="stylesheet" href="styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -14,15 +14,15 @@
     <div id="particles-js"></div>
     <center>    
         <div>
-            <h1>Cohort 3.0 Journal</h1>
+            <h1>Cohort 3.0 Cournal</h1>
         </div>
         <div>
             <p>A continuum journal for Cohort 3.0</p>
         </div>
         <div class="search-container">
-            <input type="text" id="searchInput" class="search-input" placeholder="Search by keyword or date" onkeyup="filterEntries()" aria-label="Search journal entries" />
-            <span class="search-icon">&#128269;</span> 
-        </div>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search..." onkeyup="filterEntries()" aria-label="Search journal entries" />
+            <span class="search-icon"><i class="fas fa-search"></i></span>
+        </div>        
         <div class="filters">
             <select id="sectionFilter" onchange="filterEntries()">
                 <option value="">All</option>
@@ -44,6 +44,12 @@
             </div>
         </div>
         <br>
+        <div class="theme-toggle">
+            <button id="themeToggleBtn" class="calendar-button" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>  
+        <br>      
     </center>
 
     <section class="entry" data-section="web3" data-tags="blockchain,bitcoin,cryptography">
@@ -180,6 +186,11 @@
                     <li>Use of UInt8Array to represent bytes (saves space).</li>
                     <li>Encryption Vs Hashing (Symmetric vs Asymmetric).</li>
                     <li>Signing a Txn using your private key so that it can be verified by your public key.</li>
+                    <li>offline Videos : 
+                        <ul>
+                            <li>Public Key Cryptography (from scratch) <a target="_blank" href="https://app.100xdevs.com/courses/13/441">🔗</a> </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <div>
@@ -279,7 +290,7 @@
             <p>I will take you to the creator. (of this site, not a deity)</p>
         </div>
     </footer>
-
+    
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 </body>
