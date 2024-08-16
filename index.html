@@ -12,21 +12,28 @@
     
 <body>
     <div id="particles-js"></div>
-    <center>    
-        <div>
-            <h1>Cohort 3.0 Cournal</h1>
+    <center>
+        
+        <div class="header-container">
+            <div class="title-container">
+                <h1>Cohort 3.0 Cournal</h1>
+            </div>
+            <div class="search-theme-container">
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search..." onkeyup="filterEntries()" aria-label="Search journal entries" />
+                    <span class="search-icon"><i class="fas fa-search"></i></span>
+                </div>
+                <div class="theme-toggle">
+                    <button id="themeToggleBtn" class="calendar-button" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-        <div class="search-container">
-            <input type="text" id="searchInput" class="search-input" placeholder="Search..." onkeyup="filterEntries()" aria-label="Search journal entries" />
-            <span class="search-icon"><i class="fas fa-search"></i></span>
-        </div>        
-        <div class="filters">
-            <select id="sectionFilter" onchange="filterEntries()">
-                <option value="">All</option>
-                <option value="web3">Web 3</option>
-                <option value="webdev">Web Dev</option>
-            </select>
-        </div>
+    </center>
+
+
+    <center>
         <div>
             <div>
                 <button class="calendar-button" onclick="toggleCalendar()" aria-label="Toggle calendar view" title="Toggle calendar view">
@@ -34,20 +41,15 @@
                 </button>
             </div>
 
-            <!-- Calendar iframe container -->
+            
             <div id="calendar-container">
                 <iframe src="https://calendar.google.com/calendar/embed?height=400&wkst=1&ctz=Asia%2FKolkata&bgcolor=%23ffffff&showPrint=0&showTabs=0&showCalendars=0&title&showTitle=0&src=YTE4NmU3MzE4N2YzZGIzZGI3NjVhOGQwZTY5ZTkxMzUwMGJmZmExMGY3MWU5NzhlNDYyNDEwOWY0N2RhOGQ3ZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23009688" 
                     style="border:solid 1px #777" width="300" height="300" frameborder="0" scrolling="no" aria-label="Google Calendar"></iframe>
             </div>
         </div>
-        <br>
-        <div class="theme-toggle">
-            <button id="themeToggleBtn" class="calendar-button" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
-                <i class="fas fa-moon"></i>
-            </button>
-        </div>  
-        <br>      
     </center>
+    <br>
+    
 
     <section class="entry" data-section="web3" data-tags="blockchain,bitcoin,cryptography">
         <button class="accordion" aria-expanded="false" aria-controls="panel1" id="accordion1">D1 : 2nd August 2024 : Web 3 Orientation</button>

@@ -1,19 +1,20 @@
-// Function to filter entries based on user input and section
+// Function to filter entries based on user input
 function filterEntries() {
-    const input = document.getElementById('searchInput').value.toLowerCase();
-    const sectionFilter = document.getElementById('sectionFilter').value.toLowerCase();
+    const input = document.getElementById('searchInput').value.toLowerCase().trim();
     const entries = document.querySelectorAll('.entry');
 
+    // Loop through all entry sections
     entries.forEach(entry => {
         const entryText = entry.textContent.toLowerCase();
-        const entrySection = entry.getAttribute('data-section').toLowerCase();
 
+        // Check if entry text includes the search term
         const matchesText = entryText.includes(input);
-        const matchesSection = !sectionFilter || entrySection === sectionFilter;
 
-        entry.style.display = (matchesText && matchesSection) ? '' : 'none';
+        // Show or hide the entry based on match
+        entry.style.display = (matchesText || input === '') ? '' : 'none';
     });
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const accordions = document.querySelectorAll(".accordion");
@@ -64,7 +65,7 @@ particlesJS("particles-js", {
             "random": true
         },
         "size": {
-            "value": 16,  
+            "value": 10,  
             "random": true
         },
         "move": {
